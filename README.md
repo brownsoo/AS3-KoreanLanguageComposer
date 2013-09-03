@@ -1,9 +1,8 @@
 huc
 ===
-
+한글 유니코드 조합 액션스크립트 라이브러리
 hangle unicode composer for actionscript3 (Composing Korean Syllables)
 
-(한글 유니코드 조합 액션스크립트 라이브러리)
 
 = HUC 소개 =
  * 한글 자모를 조합하여 글자를 만들어주는 액션스크립트 라이브러리 입니다.
