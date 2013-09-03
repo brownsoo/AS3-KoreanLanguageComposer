@@ -1,0 +1,41 @@
+<project name="asdoc" basedir="../">
+
+	<property file="./build/build.properties" />
+	
+	<property name="window_title" value="Hangle Unicode Composer's library API Document"/>
+	<property name="main_title" value="Hangle Unicode Composer's library"/>
+	<property name="footer" value="2013 blog.hansune.com"/>
+		
+	
+	<!-- docs 폴더 삭제 후 다시 생성 -->
+    <target name="asdoc_clean">
+        <delete dir="${docs.dir}" failOnError="false" includeEmptyDirs="true"/>
+        <mkdir dir="${docs.dir}"/>
+    </target>
+	
+	<!-- flex용 ASDoc 만들기 -->
+    <target name="create_asdoc_flex" depends="asdoc_clean">
+        <exec executable="${asdoc.exe}" failOnError="true">
+            <arg line='-doc-sources "${src.dir}"'/>
+            <arg line='-source-path "${src.dir}"'/>
+            <arg line='-window-title "${window_title}"'/>
+            <arg line='-main-title "${main_title}"'/>
+            <arg line='-footer "${footer}"'/>
+            <arg line='-output "${docs.dir}"'/>
+        </exec>
+    </target>
+
+    <!-- AIR용 ASDoc 만들기 -->
+    <target name="create_asdoc_air" depends="asdoc_clean">
+        <exec executable="${asdoc.exe}" failOnError="true">
+            <arg line='-doc-sources "${src.dir}"'/>
+            <arg line='-source-path "${src.dir}"'/>
+            <arg line='-window-title "${window_title}"'/>
+            <arg line='-main-title "${main_title}"'/>
+            <arg line='-footer "${footer}"'/>
+            <arg line='-output "${docs.dir}"'/>
+            <arg line='-library-path+="${flex4sdk.air.dir}"'/>
+        </exec>
+    </target>
+	   
+</project>
