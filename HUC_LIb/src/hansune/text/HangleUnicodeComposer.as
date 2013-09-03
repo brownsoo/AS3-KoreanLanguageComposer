@@ -196,6 +196,9 @@ package hansune.text
 			return uni.compatibleMoeum(char); 
 		}
 		
+		private static var used:Boolean = false;
+		
+		
 		/**
 		 * HangleUnicodeComposer 생성자<br/>
 		 * Constructor
@@ -203,7 +206,12 @@ package hansune.text
 		 */
 		public function HangleUnicodeComposer()
 		{
-			Hansune.copyright();
+			if(used) return;
+			used = true;
+			var re:String =
+				"* hangle unicode composer for AS3 lib : ver- " + ver() + "\n" 
+				+ "* homepage-blog.hansune.com : maker-han hyon soo\n";
+			trace(re);
 		}
 		
 		/**
