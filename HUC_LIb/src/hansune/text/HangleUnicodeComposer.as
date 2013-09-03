@@ -68,7 +68,6 @@ package hansune.text
 {
 	import flash.events.EventDispatcher;
 	
-	import hansune.Hansune;
 	import hansune.events.HangleTextEvent;
 	
 	/**
