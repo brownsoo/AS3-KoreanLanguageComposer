@@ -20,6 +20,6 @@
  * 본 소프트웨어는 공개용 라이브러리 HangleUnicodeComposer by Hansune 를 사용했습니다.
 
 ### 프로젝트 참여방법
- * 오류 보고나 제안사항은 게시판이나 [메일](hansoo.labs@gmail.com)을 이용해주세요. 
+ * 오류 보고나 제안사항은 게시판이나 [메일](mailto:hansoo.labs@gmail.com)을 이용해주세요. 
  * 개발자 블로그 [한수댁 작업실](http://blog.hansune.com)
  
