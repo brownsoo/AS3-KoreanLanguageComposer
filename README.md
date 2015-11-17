@@ -1,7 +1,8 @@
-# 한글 유니코드 조합 라이브러리
+# 한글 조합 액션스크립트 라이브러리
 
-###Hangle Unicode Composer for AS3 (Composing Korean Syllables)
+###Korean Language Composer for AS3 (Composing Korean Syllables)
 
+<embed width="443" height="252" src="http://blog.hansune.com/attachment/cfile3.uf@1364B3374DA8F8932D6F64.swf" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
 
 ### HUC 소개
  * 한글 자모를 조합하여 글자를 만들어주는 액션스크립트 라이브러리 입니다.
@@ -13,13 +14,16 @@
 
 ### 사용법
  * 플렉스 콤포넌트를 사용한 기본적인 사용법 예시를 참고하세요. [http://blog.hansune.com/286 사용법 예시]
- * 레퍼런스 도큐먼트는 여기 있습니다. [http://hansune.com/huc_docs HUC레퍼런스]
+ * 레퍼런스 도큐먼트는 여기 있습니다. [http://hansune.com/huc_docs 레퍼런스]
  * 액션 스크립트 2 버전으로 된 라이브러리와 예시를 확인할 수 있습니다. [http://blog.hansune.com/297 AS2 버전]
 
 ### 출처 정보 표시글
- * 본 소프트웨어는 공개용 라이브러리 HangleUnicodeComposer by Hansune 를 사용했습니다.
+ * 본 소프트웨어는 공개용 라이브러리 Korean Language Composer를 사용했습니다.
 
-### 프로젝트 참여방법
+### 기타
  * 오류 보고나 제안사항은 게시판이나 [메일](mailto:hansoo.labs@gmail.com)을 이용해주세요. 
  * 개발자 블로그 [한수댁 작업실](http://blog.hansune.com)
+ 
+### 수정내용
+ * 14.11.10 : 함수명 addSpacialChar → addSpecialChar 로 수정
  
