@@ -8,16 +8,15 @@
  * 많은 인터랙티브 작업에서 적용하면서 그 사용성을 검증받았습니다.
 
 ### 사용법 & 예제
- * 플렉스 콤포넌트를 사용한 기본적인 사용법 예시를 참고하세요. [http://blog.hansune.com/286 사용법 예시]
- * 레퍼런스 도큐먼트는 여기 있습니다. [http://hansune.com/huc_docs 레퍼런스]
- * 액션 스크립트 2 버전으로 된 라이브러리와 예시를 확인할 수 있습니다. [http://blog.hansune.com/297 AS2 버전]
+ * 플렉스 콤포넌트를 사용한 기본적인 사용법 예시를 참고하세요. [http://blog.hansoolabs.com/286 사용법 예시]
+ * 액션 스크립트 2 버전으로 된 라이브러리와 예시를 확인할 수 있습니다. [http://blog.hansoolabs.com/297 AS2 버전]
 
 ### 라이선스
  * MIT
 
 ### 기타
- * 오류 보고나 제안사항은 게시판이나 [메일](mailto:hansoo.labs@gmail.com)을 이용해주세요. 
- * 개발자 블로그 [한수댁 작업실](http://blog.hansune.com)
+ * 오류 보고나 제안사항은 게시판이나 [메일](mailto:hansune@me.com)을 이용해주세요. 
+ * 개발자 블로그 [한수댁 작업실](http://blog.hansoolabs.com)
  
 ### 수정내용
  * 14.11.10 : 함수명 addSpacialChar → addSpecialChar 로 수정
