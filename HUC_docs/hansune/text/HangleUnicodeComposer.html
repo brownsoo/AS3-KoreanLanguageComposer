@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../override.css" type="text/css"><meta name="keywords" content="HangleUnicodeComposer,hansune.text.HangleUnicodeComposer,compositionString,extra,instantChars,restrict,addJamo,addJamoUnicode,addSpecialChar,archive,backSpace,combine3Syllables,compare2Jamo,compare3Syllables,compatibleHangleJamo,compatibleJaeum,compatibleMoeum,del,getString3Syllables,isFinalJamo,isHangleJaeum,isHangleJamo,isHangleMoeum,isInitialJamo,isMedialJamo,reset,restore,space,ver"><title>hansune.text.HangleUnicodeComposer</title></head><body><script language="javascript" type="text/javascript" src="../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../help.js"></script><script language="javascript" type="text/javascript" src="../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'HangleUnicodeComposer - Hangle Unicode Composer's library API Document';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Hangle Unicode Composer's library</td><td class="titleTableTopNav" align="right"><a href="../../package-summary.html" onclick="loadClassListFrame('../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../class-summary.html" onclick="loadClassListFrame('../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../all-index-A.html" onclick="loadClassListFrame('../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../index.html?hansune/text/HangleUnicodeComposer.html&amp;hansune/text/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">HangleUnicodeComposer</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a>&nbsp;| <a href="#eventSummary">Events</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("HangleUnicodeComposer"); titleBar_setSubNav(false,true,false,false,false,false,true,false,true,false,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">hansune.text</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  HangleUnicodeComposer</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">HangleUnicodeComposer  <img src="../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> flash.events.EventDispatcher</td></tr></table><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b> Language Version :&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b> Runtime Versions :&nbsp;</b></td><td>AIR 1.0, Flash Player  9.0</td></tr></table><p></p><p></p><p></p>
+	              <code>HangleUnicodeComposer</code>
+	              <p>recent-update 12.04.19
+	 This class lets you make Korean letters with Hangle Jamo.
+	 한글 자모를 조합하여 문자를 만드는  클래스임.</p>
+	 참고문서(reference documents)
+	 http://en.wikipedia.org/wiki/Korean_language_and_computers#Hangul_Syllables_Area
+	 http://www.unicode.org/charts/PDF/U3130.pdf
+	 http://ko.wikipedia.org/wiki/유니코드_3000~3FFF
+	 
+	 <p></p><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#compositionString" class="signatureLink">compositionString</a> : String<div class="summaryTableDescription">
+		 조합이 완료된 문자
+		 더이상  자모조합이 불가능한 문자이므로 Backspace 로 지우면 한 글자씩 지워진다.
+		 Composed string has no more chance to compose.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#extra" class="signatureLink">extra</a> : String<div class="summaryTableDescription">
+		 조합이 완료되지 않은 문자
+		 자모조합이 가능한 문자이므로 Backspace 로 지우면 한 자모씩 지워진다.
+		 Composed string has chance to compose with other jaeum or moeum.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#instantChars" class="signatureLink">instantChars</a> : Array<div class="summaryTableDescription">
+		 extra의 한글자모 배열(extra 의 자모배열이라고 보면 된다)
+		 Array contains characters make a extra string.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#restrict" class="signatureLink">restrict</a> : uint = 3000<div class="summaryTableDescription">
+		 글자수를 제한한다.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#HangleUnicodeComposer()" class="signatureLink">HangleUnicodeComposer</a>()</div><div class="summaryTableDescription">
+		 HangleUnicodeComposer 생성자
+		 Constructor
+		 
+		 </div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#addJamo()" class="signatureLink">addJamo</a>(char:String):void</div><div class="summaryTableDescription">
+		 한글 자모를 조합하기 위해 입력한다.
+		 Input jaeum or moeum
+		  
+		 </div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#addJamoUnicode()" class="signatureLink">addJamoUnicode</a>(code:uint):void</div><div class="summaryTableDescription">
+		 유니코드로 자모를 입력한다.
+		 addJamo by unicode
+		 </div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#addSpecialChar()" class="signatureLink">addSpecialChar</a>(char:String, at:int = -1):void</div><div class="summaryTableDescription">
+		 조합할 수 없는 글자 넣기.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#archive()" class="signatureLink">archive</a>(key:String, txt:String = null):uint</div><div class="summaryTableDescription">
+		 키값으로 현재 글자 데이터를 저장한다.
+		 예를 들면, 여러개의 텍스트 필드를 전환해가며 사용할 때 상태를 저장하고 복원할 때 용이하다.
+		 Save current composed strings by suggested key.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#backSpace()" class="signatureLink">backSpace</a>(at:int = -1):void</div><div class="summaryTableDescription">
+		 앞 글자 지우기
+		 Backspace at position
+		 </div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#combine3Syllables()" class="signatureLink">combine3Syllables</a>(init:String, mid:String, fin:String):String</div><div class="summaryTableDescription">
+		 초,중,종성 조합
+		 </div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#compare2Jamo()" class="signatureLink">compare2Jamo</a>(charA:String, charB:String):Array</div><div class="summaryTableDescription">
+		 2개 자모를 비교하여 결합할 수 있는 부분은 하나로 결합하여 배열로 리턴시킨다.
+		 if two charaters are able to compose with each other, it composes two characters to one.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#compare3Syllables()" class="signatureLink">compare3Syllables</a>(init:String, mid:String, fin:String):Array</div><div class="summaryTableDescription">
+		 3개 자모를 초성 중성 종성 으로 비교하여 결합할 수 있는 부분은 하나로 결합하여 배열로 리턴시킨다.
+		 if three charaters are able to compose with each other, it composes three characters to one.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#compatibleHangleJamo()" class="signatureLink">compatibleHangleJamo</a>(char:String):Boolean</div><div class="summaryTableDescription">
+		 한글 자모인지 판단한다.
+		 check if given string is korean syllable(Jaeum or Moeum).</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#compatibleJaeum()" class="signatureLink">compatibleJaeum</a>(char:String):Boolean</div><div class="summaryTableDescription">
+		  한글 자음인지 판단한다.
+		  check if given string is Jaeum.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#compatibleMoeum()" class="signatureLink">compatibleMoeum</a>(char:String):Boolean</div><div class="summaryTableDescription">
+		 한글 모음인지  판단한다.
+		 check if given string is Moeum.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#del()" class="signatureLink">del</a>(at:int = -1):void</div><div class="summaryTableDescription">
+		 at 위치에서 뒤 글자 지우기
+		 Delete a string after specific position.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getString3Syllables()" class="signatureLink">getString3Syllables</a>(init:String, mid:String, fin:String):String</div><div class="summaryTableDescription">[static] 
+		 초,중,종성에 해당하는 자모를 조합한다.
+		 Make one letter by composing 3 syllables.
+		 
+		 var s:String = HangleUnicodeComposer.getString3Syllables("ㄱ", "ㅏ", "ㅇ");
+		 trace(s);//강
+		 
+		 </div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isFinalJamo()" class="signatureLink">isFinalJamo</a>(char:String):Boolean</div><div class="summaryTableDescription">
+		 종성인지 판단한다.
+		 check if given string is final korean syllable.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isHangleJaeum()" class="signatureLink">isHangleJaeum</a>(char:String):Boolean</div><div class="summaryTableDescription">[static] 
+		 한글자음인지 판단한다.(현실적인 자음의 범위 3131 ~ 314E)
+		 Indicate suggested character is Jaeum or not.(Available Unicode Area : 3131 ~ 314E)
+		 
+		 </div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isHangleJamo()" class="signatureLink">isHangleJamo</a>(char:String):Boolean</div><div class="summaryTableDescription">[static] 
+		 한글 자모인지 판단한다.(ref.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isHangleMoeum()" class="signatureLink">isHangleMoeum</a>(char:String):Boolean</div><div class="summaryTableDescription">[static] 
+		 한글 모음인지  판단한다.(현실적인 모음의 범위 314F ~ 3163)
+		 Indicate suggested character is Moeum or not.(Available Unicode Area : 314F ~ 3163)
+		 </div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isInitialJamo()" class="signatureLink">isInitialJamo</a>(char:String):Boolean</div><div class="summaryTableDescription">
+		 초성인지 판단한다.
+		 check if given string is initial korean syllable.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#isMedialJamo()" class="signatureLink">isMedialJamo</a>(char:String):Boolean</div><div class="summaryTableDescription">
+		 중성인지 비교한다.
+		 check if given string is medial korean syllable.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#reset()" class="signatureLink">reset</a>():void</div><div class="summaryTableDescription">
+		 모든 데이터를 지우기, 초기화
+		 Reset all datas in this instance of HangleUnicodeComposer .</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#restore()" class="signatureLink">restore</a>(key:String):String</div><div class="summaryTableDescription">
+		 키값에 해당하는 데이터 상태로 복원한다.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#space()" class="signatureLink">space</a>(at:int = -1):void</div><div class="summaryTableDescription">
+		 at 위치 다음에  공백 넣기
+		 insert blank after specific position.</div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#ver()" class="signatureLink">ver</a>():String</div><div class="summaryTableDescription">
+		 HangleUnicodeComposer 클래스의 버전
+		 
+		 </div></td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr></table></div><a name="eventSummary"></a><div class="summarySection"><div class="summaryTableTitle">Events</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableEvent"><tr><th>&nbsp;</th><th colspan="2">Event</th><th> Summary </th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#event:error" class="signatureLink">error</a></div></td><td class="summaryTableDescription summaryTableCol">
+		 에러 발생시
+		 Error in composing
+		 </td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#event:limited" class="signatureLink">limited</a></div></td><td class="summaryTableDescription summaryTableCol">제한된 글자수를 넘어서려고 할 때 발생한다. Invoke When composed string length is about to over restricted length of string.</td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#event:update" class="signatureLink">update</a></div></td><td class="summaryTableDescription summaryTableCol">조합된 글자가 변경되었을 경우 발생한다.</td><td class="summaryTableOwnerCol">HangleUnicodeComposer</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="compositionString"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">compositionString</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>public var compositionString:String</code><p></p><p></p><p>
+		 조합이 완료된 문자
+		 더이상  자모조합이 불가능한 문자이므로 Backspace 로 지우면 한 글자씩 지워진다.
+		 Composed string has no more chance to compose.
+		 </p></div><a name="propertyDetail"></a><a name="extra"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">extra</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public var extra:String</code><p></p><p></p><p>
+		 조합이 완료되지 않은 문자
+		 자모조합이 가능한 문자이므로 Backspace 로 지우면 한 자모씩 지워진다.
+		 Composed string has chance to compose with other jaeum or moeum.
+		 </p></div><a name="propertyDetail"></a><a name="instantChars"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">instantChars</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>instantChars:Array</code><p></p><p></p><p>
+		 extra의 한글자모 배열(extra 의 자모배열이라고 보면 된다)
+		 Array contains characters make a extra string.
+		 
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get instantChars():Array</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set instantChars(value:Array):void</code><br/></div><a name="propertyDetail"></a><a name="restrict"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">restrict</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public var restrict:uint = 3000</code><p></p><p></p><p>
+		 글자수를 제한한다. (기본 3000)
+		 Restrict number of composed string(Default 3000).
+		 </p></div><a name="constructorDetail"></a><div class="detailSectionHeader">Constructor Detail</div><a name="HangleUnicodeComposer()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">HangleUnicodeComposer</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">Constructor</td></tr></table><div class="detailBody"><code>public function HangleUnicodeComposer()</code><p></p><p>
+		 HangleUnicodeComposer 생성자
+		 Constructor
+		 
+		 </p></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="addJamo()"></a><a name="addJamo(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">addJamo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public function addJamo(char:String):void</code><p></p><p></p><p>
+		 한글 자모를 조합하기 위해 입력한다.
+		 Input jaeum or moeum
+		  
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">char</span>:String</code> &mdash; 자음 또는 모음 예) ㄱ, ㄴ, ㅏ, ㅣ ..
+		 </td></tr></table></p></div><a name="addJamoUnicode()"></a><a name="addJamoUnicode(uint)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">addJamoUnicode</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function addJamoUnicode(code:uint):void</code><p></p><p></p><p>
+		 유니코드로 자모를 입력한다.
+		 addJamo by unicode
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">code</span>:uint</code> &mdash; 한글자모에 해당하는 유니코드 unicode for korean charaters 
+		 </td></tr></table></p></div><a name="addSpecialChar()"></a><a name="addSpecialChar(String,int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">addSpecialChar</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function addSpecialChar(char:String, at:int = -1):void</code><p></p><p></p><p>
+		 조합할 수 없는 글자 넣기. 조합이 불가능한 문자를 입력할 때 사용하면 된다. 특히, 영어나 특수문자를 기입할 때 사용함
+		 Add Character that is not available to compose. ex) english, special character. 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">char</span>:String</code> &mdash; 글자를 넣을 위치. position to insert char.
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">at</span>:int</code> (default = <code>-1</code>)<code></code></td></tr></table></p></div><a name="archive()"></a><a name="archive(String,String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">archive</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function archive(key:String, txt:String = null):uint</code><p></p><p></p><p>
+		 키값으로 현재 글자 데이터를 저장한다.
+		 예를 들면, 여러개의 텍스트 필드를 전환해가며 사용할 때 상태를 저장하고 복원할 때 용이하다.
+		 Save current composed strings by suggested key.
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">key</span>:String</code> &mdash; 현재 글자들을 저장하기 위한 키. key value used in saving current strings. 
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">txt</span>:String</code> (default = <code>null</code>)<code></code> &mdash; 이 값을 지정하면, 현재 값 대신에 이값을 저장한다. 
+		 				if this value is set, it save this txt value instead of current strings.
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>uint</code> &mdash; 저장되어 있는 데이터 갯수. length of saved strings.
+		 </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso">restore</div></div><a name="backSpace()"></a><a name="backSpace(int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">backSpace</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function backSpace(at:int = -1):void</code><p></p><p></p><p>
+		 앞 글자 지우기
+		 Backspace at position
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">at</span>:int</code> (default = <code>-1</code>)<code></code> &mdash; 지울 글자 위치. position to backspace.
+		 </td></tr></table></p></div><a name="combine3Syllables()"></a><a name="combine3Syllables(String,String,String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">combine3Syllables</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function combine3Syllables(init:String, mid:String, fin:String):String</code><p></p><p></p><p>
+		 초,중,종성 조합
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">init</span>:String</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">mid</span>:String</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">fin</span>:String</code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>String</code></td></tr></table></div><a name="compare2Jamo()"></a><a name="compare2Jamo(String,String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">compare2Jamo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function compare2Jamo(charA:String, charB:String):Array</code><p></p><p></p><p>
+		 2개 자모를 비교하여 결합할 수 있는 부분은 하나로 결합하여 배열로 리턴시킨다.
+		 if two charaters are able to compose with each other, it composes two characters to one.
+		 And it returns a array that contains one composed string or two charaters(charA, charB).
+		  
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">charA</span>:String</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">charB</span>:String</code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Array</code> &mdash; 가능한 조합을 마친 글자를 포함한 배열
+		 </td></tr></table></div><a name="compare3Syllables()"></a><a name="compare3Syllables(String,String,String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">compare3Syllables</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function compare3Syllables(init:String, mid:String, fin:String):Array</code><p></p><p></p><p>
+		 3개 자모를 초성 중성 종성 으로 비교하여 결합할 수 있는 부분은 하나로 결합하여 배열로 리턴시킨다.
+		 if three charaters are able to compose with each other, it composes three characters to one. 
+		 Or it composes two characters to one and left one jamo(jaeum or moeum).
+		 And it returns a array that contains one composed string or two string(composed string, fin) or three string(init, mid, fin).
+		  
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">init</span>:String</code> &mdash; 초성이 되는 글자
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">mid</span>:String</code> &mdash; 중성이 되는 글자
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">fin</span>:String</code> &mdash; 종성이 되는 글자
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Array</code> &mdash; 가능한 조합을 마친 글자를 포함한 배열
+		 </td></tr></table></div><a name="compatibleHangleJamo()"></a><a name="compatibleHangleJamo(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">compatibleHangleJamo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function compatibleHangleJamo(char:String):Boolean</code><p></p><p></p><p>
+		 한글 자모인지 판단한다.
+		 check if given string is korean syllable(Jaeum or Moeum).
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">char</span>:String</code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true, false
+		 </td></tr></table></div><a name="compatibleJaeum()"></a><a name="compatibleJaeum(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">compatibleJaeum</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function compatibleJaeum(char:String):Boolean</code><p></p><p></p><p>
+		  한글 자음인지 판단한다.
+		  check if given string is Jaeum.
+		  </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">char</span>:String</code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true, false
+		  </td></tr></table></div><a name="compatibleMoeum()"></a><a name="compatibleMoeum(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">compatibleMoeum</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function compatibleMoeum(char:String):Boolean</code><p></p><p></p><p>
+		 한글 모음인지  판단한다.
+		 check if given string is Moeum.
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">char</span>:String</code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true, false
+		 </td></tr></table></div><a name="del()"></a><a name="del(int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">del</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function del(at:int = -1):void</code><p></p><p></p><p>
+		 at 위치에서 뒤 글자 지우기
+		 Delete a string after specific position.
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">at</span>:int</code> (default = <code>-1</code>)<code></code> &mdash; : string index
+		 </td></tr></table></p></div><a name="getString3Syllables()"></a><a name="getString3Syllables(String,String,String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getString3Syllables</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function getString3Syllables(init:String, mid:String, fin:String):String</code><p></p><p></p><p>
+		 초,중,종성에 해당하는 자모를 조합한다.
+		 Make one letter by composing 3 syllables.
+		 <code>
+		 var s:String = HangleUnicodeComposer.getString3Syllables("ㄱ", "ㅏ", "ㅇ");
+		 trace(s);//강
+		 </code>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">init</span>:String</code> &mdash; 초성
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">mid</span>:String</code> &mdash; 중성
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">fin</span>:String</code> &mdash; 종성
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>String</code></td></tr></table></div><a name="isFinalJamo()"></a><a name="isFinalJamo(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isFinalJamo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function isFinalJamo(char:String):Boolean</code><p></p><p></p><p>
+		 종성인지 판단한다.
+		 check if given string is final korean syllable.
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">char</span>:String</code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code></td></tr></table></div><a name="isHangleJaeum()"></a><a name="isHangleJaeum(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isHangleJaeum</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function isHangleJaeum(char:String):Boolean</code><p></p><p></p><p>
+		 한글자음인지 판단한다.(현실적인 자음의 범위 3131 ~ 314E)
+		 Indicate suggested character is Jaeum or not.(Available Unicode Area : 3131 ~ 314E)
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">char</span>:String</code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true if char is jaeum
+		 </td></tr></table></div><a name="isHangleJamo()"></a><a name="isHangleJamo(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isHangleJamo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function isHangleJamo(char:String):Boolean</code><p></p><p></p><p>
+		 한글 자모인지 판단한다.(ref. http://www.unicode.org/charts/PDF/U3130.pdf, 현실적인 영역 0x3130 ~ 0x318F)
+		 Indicate suggested character is korean character that exist in available unicode area 0x3130 ~ 0x318F.
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">char</span>:String</code> &mdash; 한 개의 자모 
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true, false
+		 </td></tr></table></div><a name="isHangleMoeum()"></a><a name="isHangleMoeum(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isHangleMoeum</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function isHangleMoeum(char:String):Boolean</code><p></p><p></p><p>
+		 한글 모음인지  판단한다.(현실적인 모음의 범위 314F ~ 3163)
+		 Indicate suggested character is Moeum or not.(Available Unicode Area : 314F ~ 3163)
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">char</span>:String</code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; true if char is Moeum
+		 </td></tr></table></div><a name="isInitialJamo()"></a><a name="isInitialJamo(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isInitialJamo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function isInitialJamo(char:String):Boolean</code><p></p><p></p><p>
+		 초성인지 판단한다.
+		 check if given string is initial korean syllable.
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">char</span>:String</code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code></td></tr></table></div><a name="isMedialJamo()"></a><a name="isMedialJamo(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isMedialJamo</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function isMedialJamo(char:String):Boolean</code><p></p><p></p><p>
+		 중성인지 비교한다.
+		 check if given string is medial korean syllable.
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">char</span>:String</code> &mdash; 비교할 자모
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code></td></tr></table></div><a name="reset()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">reset</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function reset():void</code><p></p><p></p><p>
+		 모든 데이터를 지우기, 초기화
+		 Reset all datas in this instance of HangleUnicodeComposer .
+		 </p></div><a name="restore()"></a><a name="restore(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">restore</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function restore(key:String):String</code><p></p><p></p><p>
+		 키값에 해당하는 데이터 상태로 복원한다.
+		 예를 들면, 여러개의 텍스트 필드를 전환해가며 사용할 때 상태를 저장하고 복원할 때 용이하다.
+		 compositionString, instant, extra 값이 복원된다.
+		 
+		 Restore current composed strings by suggested key.
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">key</span>:String</code> &mdash; archive에 사용한 키. value used in archive.
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>String</code> &mdash; compositionString + extra.  
+		 </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso">archive</div></div><a name="space()"></a><a name="space(int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">space</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function space(at:int = -1):void</code><p></p><p></p><p>
+		 at 위치 다음에  공백 넣기
+		 insert blank after specific position.
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">at</span>:int</code> (default = <code>-1</code>)<code></code> &mdash; : string index
+		 </td></tr></table></p></div><a name="ver()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">ver</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function ver():String</code><p></p><p></p><p>
+		 HangleUnicodeComposer 클래스의 버전
+		 
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>String</code> &mdash; class version 
+		 
+		 </td></tr></table></div><div class="detailSectionHeader"> Event Detail </div><a name="event:error"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">error</td><td class="detailHeaderType"> Event </td></tr></table><div class="detailBody"><span class="label">Event Object Type: </span><a href="../../hansune/events/HangleTextEvent.html"><code>hansune.events.HangleTextEvent</code></a><br/><span class="label">HangleTextEvent.type property = </span><a href="../../hansune/events/HangleTextEvent.html#ERROR"><code>hansune.events.HangleTextEvent.ERROR</code></a><br/><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b> Language Version :&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b> Product Version :&nbsp;</b></td><td>Flash CS3</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b> Runtime Versions :&nbsp;</b></td><td>Flash Player  9, AIR 1.0</td></tr></table><p></p><p></p><p>
+	 </p>
+		 에러 발생시
+		 Error in composing
+		 </div><a name="event:limited"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">limited</td><td class="detailHeaderType"> Event </td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event Object Type: </span><a href="../../hansune/events/HangleTextEvent.html"><code>hansune.events.HangleTextEvent</code></a><br/><span class="label">HangleTextEvent.type property = </span><a href="../../hansune/events/HangleTextEvent.html#LIMITED"><code>hansune.events.HangleTextEvent.LIMITED</code></a><br/><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b> Language Version :&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b> Product Version :&nbsp;</b></td><td>Flash CS3</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b> Runtime Versions :&nbsp;</b></td><td>Flash Player  9, AIR 1.0</td></tr></table><p></p><p></p><p>
+	 제한된 글자수를 넘어서려고 할 때 발생한다. 
+	 Invoke When composed string length is about to over restricted length of string.
+	 
+	 </p>
+		 글자수가 지정한(restrict) 수를 넘어설 경우 알림
+		 Indicate Composed string length is about to over restrict value.
+		 <p><span class="label">See also</span></p><div class="seeAlso">restrict</div></div><a name="event:update"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">update</td><td class="detailHeaderType"> Event </td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><span class="label">Event Object Type: </span><a href="../../hansune/events/HangleTextEvent.html"><code>hansune.events.HangleTextEvent</code></a><br/><span class="label">HangleTextEvent.type property = </span><a href="../../hansune/events/HangleTextEvent.html#UPDATE"><code>hansune.events.HangleTextEvent.UPDATE</code></a><br/><p></p><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b> Language Version :&nbsp;</b></td><td>ActionScript 3.0</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b> Product Version :&nbsp;</b></td><td>Flash CS3</td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space:nowrap" valign="top"><b> Runtime Versions :&nbsp;</b></td><td>Flash Player  9, AIR 1.0</td></tr></table><p></p><p></p><p>
+	 조합된 글자가 변경되었을 경우 발생한다. 이 이벤트를 받아서 텍스트 필드를 업데이트 하면 된다.
+	 Invoke When composed string is changed.
+	 
+	 </p>
+		 조합된 문자열이 수정되었을 경우 알림
+		 Indicate composed string is changed.
+		 </div><br/><br/><hr><br/><p></p><center class="copyright"><footer>2013 blog.hansune.com</footer><br/>Tue Sep 3 2013, 04:08 PM +09:00  </center></div></body></html><!--2013 blog.hansune.com<br/>Tue Sep 3 2013, 04:08 PM +09:00  -->
