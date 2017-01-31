@@ -12,7 +12,7 @@
  * 액션 스크립트 2 버전으로 된 라이브러리와 예시를 확인할 수 있습니다. [http://blog.hansoolabs.com/297 AS2 버전]
 
 ### 라이선스
- * MIT
+ * Apache License V2
 
 ### 기타
  * 오류 보고나 제안사항은 게시판이나 [메일](mailto:hansune@me.com)을 이용해주세요. 
