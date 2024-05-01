@@ -13,10 +13,6 @@
 
 ### 라이선스
  * Apache License V2
-
-### 기타
- * 오류 보고나 제안사항은 게시판이나 [메일](mailto:hansune@me.com)을 이용해주세요. 
- * 개발자 블로그 [한수댁 작업실](http://blog.hansoolabs.com)
  
 ### 수정내용
  * 14.11.10 : 함수명 addSpacialChar → addSpecialChar 로 수정
