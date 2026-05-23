@@ -1,0 +1,27 @@
+{
+  "name": "hangle-unicode-composer",
+  "version": "1.6.0",
+  "description": "TypeScript port of HUC (Hangle Unicode Composer) for composing Korean characters",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "hangul",
+    "hangle",
+    "composer",
+    "korean",
+    "keyboard",
+    "unicode"
+  ],
+  "author": "brownsoo",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
