@@ -1,0 +1,51 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: |
+            ts-lib/package-lock.json
+            example/package-lock.json
+
+      - name: Install ts-lib dependencies
+        run: |
+          cd ts-lib
+          npm ci
+
+      - name: Build ts-lib
+        run: |
+          cd ts-lib
+          npm run build
+
+      - name: Install example dependencies
+        run: |
+          cd example
+          npm ci
+
+      - name: Build example app
+        run: |
+          cd example
+          npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./example/dist
