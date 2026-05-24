@@ -20,6 +20,14 @@
   ],
   "author": "brownsoo",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brownsoo/Hangul-Unicode-Composer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brownsoo/Hangul-Unicode-Composer/issues"
+  },
+  "homepage": "https://github.com/brownsoo/Hangul-Unicode-Composer#readme",
   "devDependencies": {
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
