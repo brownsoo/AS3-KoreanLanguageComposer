@@ -54,6 +54,8 @@ composer.addJamo('ㄴ');
 
 ## 2. 웹 화상 키보드 예제 (`example`)
 
+![Virtual Keyboard Preview](example/keyboard_preview.png)
+
 TypeScript 라이브러리를 연동하여, 실제 웹 브라우저에서 동작하는 **가상(화상) 키보드** 데모입니다.
 * **글라스모피즘 디자인**: 반투명 블러 패널 스타일 및 다크/라이트 모드 지원.
 * **물리 키보드 맵핑**: 컴퓨터 실제 키보드 타이핑 시 화면 키보드가 동기화되어 한글 조합.
