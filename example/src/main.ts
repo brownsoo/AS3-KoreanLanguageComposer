@@ -98,7 +98,7 @@ const editorView = document.getElementById("composed-editor") as HTMLDivElement;
 const composedTextSpan = document.getElementById("composed-text") as HTMLSpanElement;
 const composingTextSpan = document.getElementById("composing-text") as HTMLSpanElement;
 const placeholderDiv = document.getElementById("editor-placeholder") as HTMLDivElement;
-const instantBufferCode = document.getElementById("instant-buffer") as HTMLElement;
+const bufferFlowSpan = document.getElementById("buffer-flow") as HTMLSpanElement;
 const charCountCode = document.getElementById("char-count") as HTMLElement;
 
 const themeToggleBtn = document.getElementById("theme-toggle") as HTMLButtonElement;
@@ -327,26 +327,14 @@ composer.addEventListener(HangulTextEvent.UPDATE, (e: Event) => {
   }
   
   // Update state displays
-  instantBufferCode.textContent = getComposedBufferText(composer.instantChars);
+  bufferFlowSpan.textContent = getBufferFlowText(composer.instantChars, composer.extra);
   charCountCode.textContent = `${fullText.length}/${composer.restrict}`;
 });
 
-// Helper to compose Jamo array into a Hangul string
-function getComposedBufferText(chars: string[]): string {
+// Helper to format buffer flow (e.g. "ㄱ, ㅏ, ㄹ, ㄱ ➜ 갉")
+function getBufferFlowText(chars: string[], extra: string): string {
   if (chars.length === 0) return "[]";
-  const tempComposer = new HangulUnicodeComposer();
-  for (const c of chars) {
-    try {
-      if (tempComposer.compatibleHangulJamo(c)) {
-        tempComposer.addJamo(c);
-      } else {
-        tempComposer.addSpecialChar(c);
-      }
-    } catch {
-      tempComposer.addSpecialChar(c);
-    }
-  }
-  return tempComposer.compositionString + tempComposer.extra;
+  return `${chars.join(", ")} ➜ ${extra}`;
 }
 
 // Sync physical keyboard input

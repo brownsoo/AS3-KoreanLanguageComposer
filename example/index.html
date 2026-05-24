@@ -28,12 +28,7 @@
     <main class="main-container">
       <!-- Text Display Screen -->
       <section class="display-card">
-        <div class="display-header">
-          <span class="status-indicator">● Active</span>
-          <span class="engine-ver">HUC v1.6 (TS)</span>
-        </div>
-        
-        <!-- Text View Simulator -->
+        <!-- Row 1: Standard Text Field showing completed and composing text -->
         <div id="composed-editor" class="editor-view" tabindex="0">
           <div class="editor-content-wrapper">
             <span id="composed-text" class="text-completed"></span>
@@ -43,10 +38,17 @@
           <div class="placeholder-text" id="editor-placeholder">화면의 키보드를 클릭하거나 실제 키보드로 타이핑을 시작하세요...</div>
         </div>
 
+        <!-- Row 2: Buffer and current composing mapping (e.g., ㄱ,ㅏ,ㄹ,ㄱ => 갉) -->
+        <div class="buffer-mapping-view">
+          <span class="buffer-label">대기 버퍼 (Buffer):</span>
+          <span id="buffer-flow" class="buffer-flow">[]</span>
+        </div>
+
         <div class="display-footer">
           <div class="composer-states">
-            <span class="state-badge">Buffer: <code id="instant-buffer">[]</code></span>
             <span class="state-badge">Chars: <code id="char-count">0/3000</code></span>
+            <span class="state-badge">Engine: <code>HUC v1.6 (TS)</code></span>
+            <span class="status-indicator">● Active</span>
           </div>
           <div class="editor-actions">
             <button id="btn-copy" class="action-btn secondary">복사</button>

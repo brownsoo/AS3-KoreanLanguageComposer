@@ -240,6 +240,40 @@ body.light-theme .editor-view {
   box-shadow: 0 0 10px rgba(99, 102, 241, 0.15);
 }
 
+/* Buffer Mapping View Row */
+.buffer-mapping-view {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  margin: 12px 0 16px 0;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed var(--border-card);
+  font-size: 0.95rem;
+  min-height: 44px;
+}
+
+body.light-theme .buffer-mapping-view {
+  background: rgba(0, 0, 0, 0.02);
+  border-style: solid;
+}
+
+.buffer-label {
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-right: 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.2px;
+}
+
+.buffer-flow {
+  color: var(--accent-color);
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+}
+
 .editor-content-wrapper {
   display: inline;
   word-break: break-all;
