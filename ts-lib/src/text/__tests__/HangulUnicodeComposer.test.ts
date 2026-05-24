@@ -38,6 +38,16 @@ describe("HangulUnicodeComposer", () => {
     expect(composer.extra).toBe("국");
   });
 
+  it("should compose '한ㄴ' for 'ㅎㅏㄴㄴ'", () => {
+    const composer = new HangulUnicodeComposer();
+    composer.addJamo("ㅎ");
+    composer.addJamo("ㅏ");
+    composer.addJamo("ㄴ");
+    composer.addJamo("ㄴ");
+    expect(composer.compositionString).toBe("한");
+    expect(composer.extra).toBe("ㄴ");
+  });
+
   it("should compose complex vowels (diphthongs)", () => {
     const composer = new HangulUnicodeComposer();
 

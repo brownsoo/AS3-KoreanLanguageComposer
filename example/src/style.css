@@ -252,12 +252,19 @@ body.light-theme .editor-view {
 
 /* Character currently being composed (e.g. extra property) */
 .text-composing {
-  background: var(--composing-bg);
+  background: rgba(99, 102, 241, 0.25);
   border-bottom: 2px solid var(--composing-border);
-  border-radius: 2px;
-  padding: 0 2px;
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin: 0 2px;
   color: var(--text-main);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.35);
   animation: pulse-composition 1.5s infinite ease-in-out;
+}
+
+body.light-theme .text-composing {
+  background: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.2);
 }
 
 @keyframes pulse-composition {
