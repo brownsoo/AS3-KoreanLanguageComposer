@@ -314,7 +314,7 @@ composer.addEventListener(HangulTextEvent.UPDATE, (e: Event) => {
   
   // Set toggle styling on composing section
   if (composer.extra) {
-    composingTextSpan.style.display = "inline";
+    composingTextSpan.style.display = "inline-block";
   } else {
     composingTextSpan.style.display = "none";
   }
