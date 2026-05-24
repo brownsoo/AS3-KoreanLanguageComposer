@@ -1,8 +1,8 @@
 /**
- * Event class used in HangleUnicodeComposer.
- * Replicates the AS3 HangleTextEvent behaviour.
+ * Event class used in HangulUnicodeComposer.
+ * Replicates the AS3 HangulTextEvent behaviour.
  */
-export class HangleTextEvent extends Event {
+export class HangulTextEvent extends Event {
   /**
    * Dispatched when the composed string changes.
    */

@@ -1,7 +1,7 @@
 {
-  "name": "hangle-unicode-composer",
+  "name": "hangul-unicode-composer",
   "version": "1.6.0",
-  "description": "TypeScript port of HUC (Hangle Unicode Composer) for composing Korean characters",
+  "description": "TypeScript port of HUC (Hangul Unicode Composer) for composing Korean characters",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",

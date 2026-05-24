@@ -1,4 +1,4 @@
-import { HangleUnicodeComposer, HangleTextEvent } from "../../ts-lib/src/index.js";
+import { HangulUnicodeComposer, HangulTextEvent } from "../../ts-lib/src/index.js";
 
 // Key definition interface
 interface KeyDef {
@@ -91,7 +91,7 @@ let capsActive = false;
 const savedArchives: { key: string; value: string }[] = [];
 
 // Initialize Composer
-const composer = new HangleUnicodeComposer();
+const composer = new HangulUnicodeComposer();
 
 // DOM Elements
 const editorView = document.getElementById("composed-editor") as HTMLDivElement;
@@ -286,7 +286,7 @@ function handleKeyInput(code: string) {
   // Add to composer
   if (activeLayout === 'kor') {
     // If it's a valid Hangul character
-    if (composer.compatibleHangleJamo(char)) {
+    if (composer.compatibleHangulJamo(char)) {
       composer.addJamo(char);
     } else {
       composer.addSpecialChar(char);
@@ -304,8 +304,8 @@ function handleKeyInput(code: string) {
 }
 
 // Hook Composer Event
-composer.addEventListener(HangleTextEvent.UPDATE, (e: Event) => {
-  const ev = e as HangleTextEvent;
+composer.addEventListener(HangulTextEvent.UPDATE, (e: Event) => {
+  const ev = e as HangulTextEvent;
   const fullText = ev.string;
   
   // Render visual content
@@ -454,7 +454,7 @@ function updateArchiveList() {
       // Restore this key
       const result = composer.restore(item.key);
       // Dispatch update to sync display
-      composer.dispatchEvent(new HangleTextEvent(HangleTextEvent.UPDATE, result));
+      composer.dispatchEvent(new HangulTextEvent(HangulTextEvent.UPDATE, result));
     });
     
     const keySpan = document.createElement("span");
@@ -478,7 +478,7 @@ function updateArchiveList() {
     restoreBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7 3.13-7 7-7c1.93 0 3.68.79 4.95 2.05L14 10h7V3l-2.54 2.54C16.89 3.93 14.58 3 12 3 7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9h-2z"/></svg>`;
     restoreBtn.addEventListener("click", () => {
       const result = composer.restore(item.key);
-      composer.dispatchEvent(new HangleTextEvent(HangleTextEvent.UPDATE, result));
+      composer.dispatchEvent(new HangulTextEvent(HangulTextEvent.UPDATE, result));
     });
     
     // Delete button

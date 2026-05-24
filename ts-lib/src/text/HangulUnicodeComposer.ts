@@ -1,4 +1,4 @@
-import { HangleTextEvent } from "./HangleTextEvent.js";
+import { HangulTextEvent } from "./HangulTextEvent.js";
 
 class ArchivePack {
   public key: string = "";
@@ -16,11 +16,11 @@ class ArchivePack {
 }
 
 /**
- * HangleUnicodeComposer
+ * HangulUnicodeComposer
  * Ports the AS3 한글 조합 라이브러리 to TypeScript.
  * Composes Korean Jamo characters into Unicode Hangul syllables.
  */
-export class HangleUnicodeComposer extends EventTarget {
+export class HangulUnicodeComposer extends EventTarget {
   /**
    * Initial consonant (초성) Unicode values
    */
@@ -53,31 +53,31 @@ export class HangleUnicodeComposer extends EventTarget {
    * Helper to make one letter by composing 3 syllables.
    */
   public static getString3Syllables(init: string, mid: string, fin: string): string {
-    const uni = new HangleUnicodeComposer();
+    const uni = new HangulUnicodeComposer();
     return uni.combine3Syllables(init, mid, fin);
   }
 
   /**
    * Returns true if the character is a Hangeul Jaeum (consonant) in the range 3131 ~ 314E.
    */
-  public static isHangleJaeum(char: string): boolean {
-    const uni = new HangleUnicodeComposer();
+  public static isHangulJaeum(char: string): boolean {
+    const uni = new HangulUnicodeComposer();
     return uni.compatibleJaeum(char);
   }
 
   /**
    * Returns true if the character is a Hangeul Jamo in the range 3130 ~ 318F.
    */
-  public static isHangleJamo(char: string): boolean {
-    const uni = new HangleUnicodeComposer();
-    return uni.compatibleHangleJamo(char);
+  public static isHangulJamo(char: string): boolean {
+    const uni = new HangulUnicodeComposer();
+    return uni.compatibleHangulJamo(char);
   }
 
   /**
    * Returns true if the character is a Hangeul Moeum (vowel) in the range 314F ~ 3163.
    */
-  public static isHangleMoeum(char: string): boolean {
-    const uni = new HangleUnicodeComposer();
+  public static isHangulMoeum(char: string): boolean {
+    const uni = new HangulUnicodeComposer();
     return uni.compatibleMoeum(char);
   }
 
@@ -95,10 +95,10 @@ export class HangleUnicodeComposer extends EventTarget {
 
   constructor() {
     super();
-    if (HangleUnicodeComposer.used) return;
-    HangleUnicodeComposer.used = true;
+    if (HangulUnicodeComposer.used) return;
+    HangulUnicodeComposer.used = true;
     const re =
-      "* hangle unicode composer for TS lib : ver- " + this.ver() + "\n" +
+      "* hangul unicode composer for TS lib : ver- " + this.ver() + "\n" +
       "* homepage-blog.hansune.com : maker-han hyon soo\n";
     console.log(re);
   }
@@ -119,7 +119,7 @@ export class HangleUnicodeComposer extends EventTarget {
    * Input Jaeum or Moeum to compose.
    */
   public addJamo(char: string): void {
-    if (!this.compatibleHangleJamo(char)) return;
+    if (!this.compatibleHangulJamo(char)) return;
     this.instant.push(char);
     this.instantUpdate();
   }
@@ -361,23 +361,23 @@ export class HangleUnicodeComposer extends EventTarget {
 
     if (this.compositionString.length + this.extra.length > this.restrict) {
       this.backSpace();
-      this.dispatchComposerEvent(HangleTextEvent.LIMITED, this.compositionString + this.extra);
+      this.dispatchComposerEvent(HangulTextEvent.LIMITED, this.compositionString + this.extra);
     }
     // console.log("<instant : " + this.instant.join(",") + ">");
-    this.dispatchComposerEvent(HangleTextEvent.UPDATE, this.compositionString + this.extra);
+    this.dispatchComposerEvent(HangulTextEvent.UPDATE, this.compositionString + this.extra);
   }
 
   /**
    * Helper to dispatch events and invoke corresponding callbacks.
    */
   private dispatchComposerEvent(type: string, text: string) {
-    const event = new HangleTextEvent(type, text);
+    const event = new HangulTextEvent(type, text);
     this.dispatchEvent(event);
-    if (type === HangleTextEvent.UPDATE && this.onUpdate) {
+    if (type === HangulTextEvent.UPDATE && this.onUpdate) {
       this.onUpdate(text);
-    } else if (type === HangleTextEvent.LIMITED && this.onLimited) {
+    } else if (type === HangulTextEvent.LIMITED && this.onLimited) {
       this.onLimited(text);
-    } else if (type === HangleTextEvent.ERROR && this.onError) {
+    } else if (type === HangulTextEvent.ERROR && this.onError) {
       this.onError(text);
     }
   }
@@ -387,7 +387,7 @@ export class HangleUnicodeComposer extends EventTarget {
    */
   public addSpecialChar(char: string, at = -1): void {
     if (this.compositionString.length + this.extra.length + 1 > this.restrict) {
-      this.dispatchComposerEvent(HangleTextEvent.LIMITED, this.compositionString + this.extra);
+      this.dispatchComposerEvent(HangulTextEvent.LIMITED, this.compositionString + this.extra);
       return;
     }
     this.compositionString += this.extra;
@@ -401,7 +401,7 @@ export class HangleUnicodeComposer extends EventTarget {
     this.extra = "";
     this.instant = [];
 
-    this.dispatchComposerEvent(HangleTextEvent.UPDATE, this.compositionString);
+    this.dispatchComposerEvent(HangulTextEvent.UPDATE, this.compositionString);
   }
 
   /**
@@ -462,7 +462,7 @@ export class HangleUnicodeComposer extends EventTarget {
   /**
    * Checks if string is a valid Hangul syllable or Jamo.
    */
-  public compatibleHangleJamo(char: string): boolean {
+  public compatibleHangulJamo(char: string): boolean {
     if (char.length !== 1) {
       throw new Error("1개의 글자가 필요합니다. only one character is available.");
     }
@@ -498,7 +498,7 @@ export class HangleUnicodeComposer extends EventTarget {
     this.compositionString = str.slice(0, at) + str.slice(at + 2);
     this.extra = "";
     this.instant = [];
-    this.dispatchComposerEvent(HangleTextEvent.UPDATE, this.compositionString);
+    this.dispatchComposerEvent(HangulTextEvent.UPDATE, this.compositionString);
   }
 
   /**
@@ -516,7 +516,7 @@ export class HangleUnicodeComposer extends EventTarget {
    */
   public isFinalJamo(char: string): boolean {
     const code = char.charCodeAt(0);
-    return HangleUnicodeComposer.FINAL.indexOf(code) >= 0;
+    return HangulUnicodeComposer.FINAL.indexOf(code) >= 0;
   }
 
   /**
@@ -524,7 +524,7 @@ export class HangleUnicodeComposer extends EventTarget {
    */
   public isInitialJamo(char: string): boolean {
     const code = char.charCodeAt(0);
-    return HangleUnicodeComposer.INITIAL.indexOf(code) >= 0;
+    return HangulUnicodeComposer.INITIAL.indexOf(code) >= 0;
   }
 
   /**
@@ -532,7 +532,7 @@ export class HangleUnicodeComposer extends EventTarget {
    */
   public isMedialJamo(char: string): boolean {
     const code = char.charCodeAt(0);
-    return HangleUnicodeComposer.MEDIAL.indexOf(code) >= 0;
+    return HangulUnicodeComposer.MEDIAL.indexOf(code) >= 0;
   }
 
   /**
@@ -540,7 +540,7 @@ export class HangleUnicodeComposer extends EventTarget {
    */
   public space(at = -1): void {
     if (this.compositionString.length + this.extra.length + 1 > this.restrict) {
-      this.dispatchComposerEvent(HangleTextEvent.LIMITED, this.compositionString + this.extra);
+      this.dispatchComposerEvent(HangulTextEvent.LIMITED, this.compositionString + this.extra);
       return;
     }
     this.compositionString += this.extra;
@@ -554,16 +554,16 @@ export class HangleUnicodeComposer extends EventTarget {
     this.extra = "";
     this.instant = [];
 
-    this.dispatchComposerEvent(HangleTextEvent.UPDATE, this.compositionString);
+    this.dispatchComposerEvent(HangulTextEvent.UPDATE, this.compositionString);
   }
 
   /**
    * Combines initial, medial, and final into a single Hangul syllable.
    */
   public combine3Syllables(init: string, mid: string, fin: string): string {
-    const initCode = HangleUnicodeComposer.INITIAL.indexOf(init.charCodeAt(0));
-    const midCode = HangleUnicodeComposer.MEDIAL.indexOf(mid.charCodeAt(0));
-    const finCode = fin === "" ? 0 : HangleUnicodeComposer.FINAL.indexOf(fin.charCodeAt(0));
+    const initCode = HangulUnicodeComposer.INITIAL.indexOf(init.charCodeAt(0));
+    const midCode = HangulUnicodeComposer.MEDIAL.indexOf(mid.charCodeAt(0));
+    const finCode = fin === "" ? 0 : HangulUnicodeComposer.FINAL.indexOf(fin.charCodeAt(0));
 
     return String.fromCharCode((initCode * 588 + midCode * 28 + finCode) + 44032);
   }

@@ -1,9 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { HangleUnicodeComposer } from "../HangleUnicodeComposer.js";
+import { HangulUnicodeComposer } from "../HangulUnicodeComposer.js";
 
-describe("HangleUnicodeComposer", () => {
+describe("HangulUnicodeComposer", () => {
   it("should compose basic syllables", () => {
-    const composer = new HangleUnicodeComposer();
+    const composer = new HangulUnicodeComposer();
     
     // Test '가' (ㄱ + ㅏ)
     composer.addJamo("ㄱ");
@@ -39,7 +39,7 @@ describe("HangleUnicodeComposer", () => {
   });
 
   it("should compose complex vowels (diphthongs)", () => {
-    const composer = new HangleUnicodeComposer();
+    const composer = new HangulUnicodeComposer();
 
     // Test '과' (ㄱ + ㅗ + ㅏ)
     composer.addJamo("ㄱ");
@@ -53,7 +53,7 @@ describe("HangleUnicodeComposer", () => {
   });
 
   it("should handle double final consonants", () => {
-    const composer = new HangleUnicodeComposer();
+    const composer = new HangulUnicodeComposer();
 
     // Test '닭' (ㄷ + ㅏ + ㄹ + ㄱ)
     composer.addJamo("ㄷ");
@@ -64,7 +64,7 @@ describe("HangleUnicodeComposer", () => {
   });
 
   it("should process carry-over of final consonant to next syllable's initial", () => {
-    const composer = new HangleUnicodeComposer();
+    const composer = new HangulUnicodeComposer();
 
     // Test '가마' typing (ㄱ + ㅏ + ㅁ + ㅏ)
     composer.addJamo("ㄱ");
@@ -78,7 +78,7 @@ describe("HangleUnicodeComposer", () => {
   });
 
   it("should process double consonant carry-over to next syllable's initial", () => {
-    const composer = new HangleUnicodeComposer();
+    const composer = new HangulUnicodeComposer();
 
     // Test '앉아' typing (ㅇ + ㅏ + ㄴ + ㅈ + ㅏ)
     composer.addJamo("ㅇ");
@@ -93,7 +93,7 @@ describe("HangleUnicodeComposer", () => {
   });
 
   it("should handle backspace correctly", () => {
-    const composer = new HangleUnicodeComposer();
+    const composer = new HangulUnicodeComposer();
 
     // Type '강' (ㄱ + ㅏ + ㅇ)
     composer.addJamo("ㄱ");
@@ -115,7 +115,7 @@ describe("HangleUnicodeComposer", () => {
   });
 
   it("should handle space and special characters", () => {
-    const composer = new HangleUnicodeComposer();
+    const composer = new HangulUnicodeComposer();
 
     // Type '한'
     composer.addJamo("ㅎ");
@@ -133,7 +133,7 @@ describe("HangleUnicodeComposer", () => {
   });
 
   it("should support archive and restore", () => {
-    const composer = new HangleUnicodeComposer();
+    const composer = new HangulUnicodeComposer();
 
     // Type '한' in composer
     composer.addJamo("ㅎ");
