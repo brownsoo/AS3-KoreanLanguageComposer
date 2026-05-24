@@ -327,9 +327,27 @@ composer.addEventListener(HangulTextEvent.UPDATE, (e: Event) => {
   }
   
   // Update state displays
-  instantBufferCode.textContent = JSON.stringify(composer.instantChars);
+  instantBufferCode.textContent = getComposedBufferText(composer.instantChars);
   charCountCode.textContent = `${fullText.length}/${composer.restrict}`;
 });
+
+// Helper to compose Jamo array into a Hangul string
+function getComposedBufferText(chars: string[]): string {
+  if (chars.length === 0) return "[]";
+  const tempComposer = new HangulUnicodeComposer();
+  for (const c of chars) {
+    try {
+      if (tempComposer.compatibleHangulJamo(c)) {
+        tempComposer.addJamo(c);
+      } else {
+        tempComposer.addSpecialChar(c);
+      }
+    } catch {
+      tempComposer.addSpecialChar(c);
+    }
+  }
+  return tempComposer.compositionString + tempComposer.extra;
+}
 
 // Sync physical keyboard input
 document.addEventListener("keydown", (e: KeyboardEvent) => {
